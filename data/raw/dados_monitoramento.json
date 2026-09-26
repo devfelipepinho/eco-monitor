@@ -26,6 +26,15 @@
       "latitude": -23.533,
       "longitude": -46.791,
       "operador": "Operador Gama"
+    },
+    {
+      "id_estacao": 4,
+      "nome_estacao": "Estação Rio Tamanduateí",
+      "municipio": "Santo André",
+      "estado": "SP",
+      "latitude": -23.654,
+      "longitude": -46.537,
+      "operador": "Operador Delta"
     }
   ],
   "leituras": [
@@ -567,6 +576,102 @@
       "condutividade": 188.9,
       "temperatura_ar": 34.5,
       "umidade": 50.0,
+      "precipitacao": 0.0
+    },
+    {
+      "id_leitura": 46,
+      "id_estacao": 4,
+      "data_hora": "2026-01-01 08:00:00",
+      "temperatura_agua": 21.5,
+      "ph": 7.1,
+      "oxigenio_dissolvido": 6.5,
+      "condutividade": 118.0,
+      "temperatura_ar": 25.0,
+      "umidade": 74.0,
+      "precipitacao": 0.0
+    },
+    {
+      "id_leitura": 47,
+      "id_estacao": 4,
+      "data_hora": "2026-01-01 14:00:00",
+      "temperatura_agua": 22.8,
+      "ph": 7.2,
+      "oxigenio_dissolvido": 6.2,
+      "condutividade": 120.5,
+      "temperatura_ar": 28.3,
+      "umidade": 66.0,
+      "precipitacao": 0.0
+    },
+    {
+      "id_leitura": 48,
+      "id_estacao": 4,
+      "data_hora": "2026-01-02 08:00:00",
+      "temperatura_agua": 21.9,
+      "ph": 7.0,
+      "oxigenio_dissolvido": 6.4,
+      "condutividade": 119.3,
+      "temperatura_ar": 24.7,
+      "umidade": 76.0,
+      "precipitacao": 1.5
+    },
+    {
+      "id_leitura": 49,
+      "id_estacao": 4,
+      "data_hora": "2026-01-02 14:00:00",
+      "temperatura_agua": 38.5,
+      "ph": 4.1,
+      "oxigenio_dissolvido": 1.2,
+      "condutividade": 310.0,
+      "temperatura_ar": 29.8,
+      "umidade": 61.0,
+      "precipitacao": 0.0
+    },
+    {
+      "id_leitura": 50,
+      "id_estacao": 4,
+      "data_hora": "2026-01-03 08:00:00",
+      "temperatura_agua": 22.1,
+      "ph": 7.1,
+      "oxigenio_dissolvido": 6.3,
+      "condutividade": 117.8,
+      "temperatura_ar": 25.2,
+      "umidade": 75.0,
+      "precipitacao": 4.0
+    },
+    {
+      "id_leitura": 51,
+      "id_estacao": 4,
+      "data_hora": "2026-01-03 14:00:00",
+      "temperatura_agua": 23.0,
+      "ph": 7.2,
+      "oxigenio_dissolvido": 6.1,
+      "condutividade": 121.0,
+      "temperatura_ar": 27.9,
+      "umidade": 64.0,
+      "precipitacao": 0.0
+    },
+    {
+      "id_leitura": 52,
+      "id_estacao": 4,
+      "data_hora": "2026-01-04 08:00:00",
+      "temperatura_agua": 21.7,
+      "ph": 7.0,
+      "oxigenio_dissolvido": 6.5,
+      "condutividade": 116.9,
+      "temperatura_ar": 24.5,
+      "umidade": 77.0,
+      "precipitacao": 0.0
+    },
+    {
+      "id_leitura": 53,
+      "id_estacao": 4,
+      "data_hora": "2026-01-04 14:00:00",
+      "temperatura_agua": 23.3,
+      "ph": 7.1,
+      "oxigenio_dissolvido": 6.0,
+      "condutividade": 122.4,
+      "temperatura_ar": 29.0,
+      "umidade": 62.0,
       "precipitacao": 0.0
     }
   ]

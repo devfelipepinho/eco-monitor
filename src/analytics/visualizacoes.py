@@ -29,7 +29,8 @@ def _slugify(texto: str) -> str:
     normalizado = unicodedata.normalize("NFD", texto.lower())
     sem_acento = "".join(c for c in normalizado if unicodedata.category(c) != "Mn")
     sem_acento = sem_acento.replace(" ", "_")
-    return "".join(c for c in sem_acento if c.isalnum() or c in ("_", "-"))
+    _ASCII_ALLOWED = set("abcdefghijklmnopqrstuvwxyz0123456789")
+    return "".join(c for c in sem_acento if c in _ASCII_ALLOWED or c in ("_", "-"))
 
 
 def gerar_graficos_por_estacao(df_leituras: pd.DataFrame, pasta_saida: str = "reports") -> None:

@@ -68,14 +68,14 @@ def run_pipeline() -> None:
     data_inicial = os.getenv("DATA_INICIAL", "2026-01-01")
     data_final = os.getenv("DATA_FINAL", "2026-01-08")
 
-    print("[1/6] Limpando execução anterior...")
-    limpar_execucao_anterior(caminho_banco)
-    garantir_pastas()
-
-    print("[2/6] Carregando e tratando dados...")
+    print("[1/6] Carregando e tratando dados...")
     df_estacoes, df_leituras = carregar_dados_json(caminho_json)
     df_estacoes = anonimizar_estacoes(df_estacoes)
     df_leituras = tratar_leituras(df_leituras)
+
+    print("[2/6] Limpando execução anterior...")
+    limpar_execucao_anterior(caminho_banco)
+    garantir_pastas()
 
     df_estacoes.to_csv("data/processed/estacoes_tratadas.csv", index=False)
     df_leituras.to_csv("data/processed/leituras_tratadas.csv", index=False)
