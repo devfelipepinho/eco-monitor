@@ -6,7 +6,9 @@ import pandas as pd
 
 def conectar_banco(caminho_banco: str) -> sqlite3.Connection:
     caminho = Path(caminho_banco)
-    return sqlite3.connect(caminho)
+    conexao = sqlite3.connect(caminho)
+    conexao.execute("PRAGMA foreign_keys = ON")
+    return conexao
 
 
 def criar_tabelas(conexao: sqlite3.Connection) -> None:
@@ -44,10 +46,15 @@ def criar_tabelas(conexao: sqlite3.Connection) -> None:
 
 
 def inserir_dados(conexao: sqlite3.Connection, df_estacoes: pd.DataFrame, df_leituras: pd.DataFrame) -> None:
-    df_estacoes.to_sql("estacoes", conexao, if_exists="replace", index=False)
+    cursor = conexao.cursor()
+    cursor.execute("DELETE FROM leituras")
+    cursor.execute("DELETE FROM estacoes")
+    conexao.commit()
+
+    df_estacoes.to_sql("estacoes", conexao, if_exists="append", index=False)
     df_leituras_formatado = df_leituras.copy()
     df_leituras_formatado["data_hora"] = df_leituras_formatado["data_hora"].astype(str)
-    df_leituras_formatado.to_sql("leituras", conexao, if_exists="replace", index=False)
+    df_leituras_formatado.to_sql("leituras", conexao, if_exists="append", index=False)
 
 
 def consultar_medias_por_estacao(conexao: sqlite3.Connection) -> pd.DataFrame:
@@ -59,7 +66,7 @@ def consultar_medias_por_estacao(conexao: sqlite3.Connection) -> pd.DataFrame:
         ROUND(AVG(l.oxigenio_dissolvido), 2) AS media_oxigenio_dissolvido
     FROM leituras l
     JOIN estacoes e ON e.id_estacao = l.id_estacao
-    GROUP BY e.nome_estacao
+    GROUP BY e.id_estacao, e.nome_estacao
     ORDER BY e.nome_estacao
     """
     return pd.read_sql_query(consulta, conexao)
