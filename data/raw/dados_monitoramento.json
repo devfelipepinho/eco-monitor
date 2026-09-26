@@ -1,0 +1,45 @@
+{
+  "estacoes": [
+    {
+      "id_estacao": 1,
+      "nome_estacao": "Estação Rio Pinheiros",
+      "municipio": "São Paulo",
+      "estado": "SP",
+      "latitude": -23.567,
+      "longitude": -46.701,
+      "operador": "Operador Alfa"
+    },
+    {
+      "id_estacao": 2,
+      "nome_estacao": "Estação Represa Guarapiranga",
+      "municipio": "São Paulo",
+      "estado": "SP",
+      "latitude": -23.742,
+      "longitude": -46.699,
+      "operador": "Operador Beta"
+    },
+    {
+      "id_estacao": 3,
+      "nome_estacao": "Estação Rio Tietê",
+      "municipio": "Osasco",
+      "estado": "SP",
+      "latitude": -23.533,
+      "longitude": -46.791,
+      "operador": "Operador Gama"
+    }
+  ],
+  "leituras": [
+    {"id_leitura": 1, "id_estacao": 1, "data_hora": "2026-01-01 08:00:00", "temperatura_agua": 22.4, "ph": 6.9, "oxigenio_dissolvido": 6.1, "condutividade": 123.5, "temperatura_ar": 26.3, "umidade": 72.0, "precipitacao": 0.0},
+    {"id_leitura": 2, "id_estacao": 1, "data_hora": "2026-01-01 14:00:00", "temperatura_agua": 23.1, "ph": 7.0, "oxigenio_dissolvido": 5.9, "condutividade": 125.0, "temperatura_ar": 29.1, "umidade": 65.0, "precipitacao": 0.0},
+    {"id_leitura": 3, "id_estacao": 1, "data_hora": "2026-01-02 08:00:00", "temperatura_agua": 22.8, "ph": 6.8, "oxigenio_dissolvido": 6.0, "condutividade": 124.2, "temperatura_ar": 25.9, "umidade": 74.0, "precipitacao": 2.3},
+    {"id_leitura": 4, "id_estacao": 1, "data_hora": "2026-01-02 14:00:00", "temperatura_agua": 24.0, "ph": 7.1, "oxigenio_dissolvido": 5.8, "condutividade": 126.7, "temperatura_ar": 30.4, "umidade": 60.0, "precipitacao": 0.0},
+    {"id_leitura": 5, "id_estacao": 2, "data_hora": "2026-01-01 08:00:00", "temperatura_agua": 21.2, "ph": 7.3, "oxigenio_dissolvido": 7.2, "condutividade": 98.4, "temperatura_ar": 25.5, "umidade": 78.0, "precipitacao": 0.0},
+    {"id_leitura": 6, "id_estacao": 2, "data_hora": "2026-01-01 14:00:00", "temperatura_agua": 21.9, "ph": 7.4, "oxigenio_dissolvido": 7.0, "condutividade": 99.1, "temperatura_ar": 28.0, "umidade": 70.0, "precipitacao": 0.0},
+    {"id_leitura": 7, "id_estacao": 2, "data_hora": "2026-01-02 08:00:00", "temperatura_agua": 21.5, "ph": 7.2, "oxigenio_dissolvido": 7.1, "condutividade": null, "temperatura_ar": 25.0, "umidade": 81.0, "precipitacao": 4.1},
+    {"id_leitura": 8, "id_estacao": 2, "data_hora": "2026-01-02 14:00:00", "temperatura_agua": 22.1, "ph": null, "oxigenio_dissolvido": 6.9, "condutividade": 101.3, "temperatura_ar": 28.7, "umidade": 68.0, "precipitacao": 0.0},
+    {"id_leitura": 9, "id_estacao": 3, "data_hora": "2026-01-01 08:00:00", "temperatura_agua": 23.8, "ph": 6.5, "oxigenio_dissolvido": 4.8, "condutividade": 140.2, "temperatura_ar": 26.8, "umidade": 75.0, "precipitacao": 0.0},
+    {"id_leitura": 10, "id_estacao": 3, "data_hora": "2026-01-01 14:00:00", "temperatura_agua": 24.5, "ph": 6.4, "oxigenio_dissolvido": 4.5, "condutividade": 142.0, "temperatura_ar": 31.0, "umidade": 62.0, "precipitacao": 0.0},
+    {"id_leitura": 11, "id_estacao": 3, "data_hora": "2026-01-02 08:00:00", "temperatura_agua": 24.1, "ph": 6.6, "oxigenio_dissolvido": 4.7, "condutividade": 141.1, "temperatura_ar": 27.2, "umidade": 77.0, "precipitacao": 1.2},
+    {"id_leitura": 12, "id_estacao": 3, "data_hora": "2026-01-02 14:00:00", "temperatura_agua": 29.9, "ph": 5.8, "oxigenio_dissolvido": 3.2, "condutividade": 188.9, "temperatura_ar": 34.5, "umidade": 50.0, "precipitacao": 0.0}
+  ]
+}
