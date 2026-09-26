@@ -28,9 +28,9 @@ eco-monitor/
 │   ├── analytics/
 │   │   ├── stats.py
 │   │   └── visualizacoes.py
-├── database/
-│   └──   sqlite_db.py
-├── ingestion/
+│   ├── database/
+│   │   └── sqlite_db.py
+│   └── ingestion/
 │       └── load_data.py
 ├── tests/
 │   └── test_stats.py
@@ -61,7 +61,7 @@ eco-monitor/
 Clone o repositório e entre na pasta:
 
 ```bash
-git clone https://github.com/seu-usuario/eco-monitor.git
+git clone https://github.com/devfelipepinho/eco-monitor.git
 cd eco-monitor
 ```
 

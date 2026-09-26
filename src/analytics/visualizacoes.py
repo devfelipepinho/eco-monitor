@@ -25,10 +25,11 @@ COR_FUNDO_SUBPLOT = "#f9f9f9"
 
 
 def _slugify(texto: str) -> str:
-    """Remove acentos e espaços para uso seguro em nomes de arquivo."""
+    """Remove acentos e restringe a letras, dígitos, _ e - para uso seguro em nomes de arquivo."""
     normalizado = unicodedata.normalize("NFD", texto.lower())
     sem_acento = "".join(c for c in normalizado if unicodedata.category(c) != "Mn")
-    return sem_acento.replace(" ", "_")
+    sem_acento = sem_acento.replace(" ", "_")
+    return "".join(c for c in sem_acento if c.isalnum() or c in ("_", "-"))
 
 
 def gerar_graficos_por_estacao(df_leituras: pd.DataFrame, pasta_saida: str = "reports") -> None:

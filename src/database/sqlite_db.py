@@ -46,10 +46,15 @@ def criar_tabelas(conexao: sqlite3.Connection) -> None:
 
 
 def inserir_dados(conexao: sqlite3.Connection, df_estacoes: pd.DataFrame, df_leituras: pd.DataFrame) -> None:
-    df_estacoes.to_sql("estacoes", conexao, if_exists="replace", index=False)
+    cursor = conexao.cursor()
+    cursor.execute("DELETE FROM leituras")
+    cursor.execute("DELETE FROM estacoes")
+    conexao.commit()
+
+    df_estacoes.to_sql("estacoes", conexao, if_exists="append", index=False)
     df_leituras_formatado = df_leituras.copy()
     df_leituras_formatado["data_hora"] = df_leituras_formatado["data_hora"].astype(str)
-    df_leituras_formatado.to_sql("leituras", conexao, if_exists="replace", index=False)
+    df_leituras_formatado.to_sql("leituras", conexao, if_exists="append", index=False)
 
 
 def consultar_medias_por_estacao(conexao: sqlite3.Connection) -> pd.DataFrame:
