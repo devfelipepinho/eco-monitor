@@ -6,7 +6,9 @@ import pandas as pd
 
 def conectar_banco(caminho_banco: str) -> sqlite3.Connection:
     caminho = Path(caminho_banco)
-    return sqlite3.connect(caminho)
+    conexao = sqlite3.connect(caminho)
+    conexao.execute("PRAGMA foreign_keys = ON")
+    return conexao
 
 
 def criar_tabelas(conexao: sqlite3.Connection) -> None:
@@ -59,7 +61,7 @@ def consultar_medias_por_estacao(conexao: sqlite3.Connection) -> pd.DataFrame:
         ROUND(AVG(l.oxigenio_dissolvido), 2) AS media_oxigenio_dissolvido
     FROM leituras l
     JOIN estacoes e ON e.id_estacao = l.id_estacao
-    GROUP BY e.nome_estacao
+    GROUP BY e.id_estacao, e.nome_estacao
     ORDER BY e.nome_estacao
     """
     return pd.read_sql_query(consulta, conexao)
