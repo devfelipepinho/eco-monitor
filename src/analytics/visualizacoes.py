@@ -1,3 +1,4 @@
+import unicodedata
 from pathlib import Path
 
 import matplotlib.pyplot as plt
@@ -54,7 +55,9 @@ def gerar_graficos_por_estacao(df_leituras: pd.DataFrame, pasta_saida: str = "re
 
         plt.tight_layout()
 
-        nome_arquivo = estacao.lower().replace(" ", "_").replace("ç", "c").replace("ã", "a").replace("ê", "e")
+        nome_arquivo = unicodedata.normalize("NFD", estacao.lower())
+        nome_arquivo = "".join(c for c in nome_arquivo if unicodedata.category(c) != "Mn")
+        nome_arquivo = nome_arquivo.replace(" ", "_")
         caminho = Path(pasta_saida) / f"grafico_{nome_arquivo}.png"
         fig.savefig(caminho, dpi=120, bbox_inches="tight")
         plt.close(fig)
