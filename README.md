@@ -33,6 +33,8 @@ eco-monitor/
 │   └── ingestion/
 │       └── load_data.py
 ├── tests/
+│   ├── test_load_data.py
+│   ├── test_sqlite_db.py
 │   └── test_stats.py
 ├── conftest.py
 ├── .env.example
@@ -124,10 +126,30 @@ Após a execução, o projeto gera:
 
 ## Testes
 
-Com o ambiente virtual ativo:
+Com o ambiente virtual ativo, execute todos os testes a partir da raiz do projeto:
 
 ```bash
 pytest
+```
+
+Para ver o nome de cada teste e o resultado detalhado:
+
+```bash
+pytest -v
+```
+
+### Executar cada arquivo individualmente
+
+| Arquivo | Comando |
+|---|---|
+| `tests/test_load_data.py` | `pytest tests/test_load_data.py` |
+| `tests/test_sqlite_db.py` | `pytest tests/test_sqlite_db.py` |
+| `tests/test_stats.py` | `pytest tests/test_stats.py` |
+
+Para rodar um único teste dentro de um arquivo:
+
+```bash
+pytest tests/test_stats.py::nome_do_teste
 ```
 
 ## Observações
